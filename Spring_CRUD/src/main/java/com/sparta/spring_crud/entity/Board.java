@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Entity
 @NoArgsConstructor
-public class Board extends com.sparta.crud.entity.Timestamped {
+public class Board extends com.sparta.spring_crud.entity.Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Board extends com.sparta.crud.entity.Timestamped {
 
     @OneToMany(mappedBy = "board", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     @OrderBy("id desc")
-    private List<com.sparta.crud.entity.BoardLike> boardLikes = new ArrayList<>();
+    private List<BoardLike> boardLikes = new ArrayList<>();
 
     @Column(nullable = false)
     private String title;
