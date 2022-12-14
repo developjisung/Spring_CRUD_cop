@@ -22,7 +22,7 @@ public class Comment extends Timestamped {
 
     @ManyToOne
     @JoinColumn(name = "BOARD_ID", nullable = false)
-    private com.sparta.crud.entity.Board board;
+    private Board board;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID", nullable = false)
@@ -41,7 +41,7 @@ public class Comment extends Timestamped {
     @Column
     private int likeCnt;
 
-    public Comment(CommentRequestDto commentRequestDto, com.sparta.crud.entity.Board board, User user) {
+    public Comment(CommentRequestDto commentRequestDto, Board board, User user) {
         this.comment = commentRequestDto.getComment(); // commentRequestDto에서 댓글 데이터 저장
         this.username = user.getUsername(); // commentRequestDto에서 유저 이름 데이터 저장
         this.board = board; // board 객체

@@ -17,7 +17,7 @@ public class User {
     private Long id;
 
     @OneToMany(mappedBy = "user")
-    private List<com.sparta.crud.entity.Board> boardList = new ArrayList<>();
+    private List<Board> boardList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
     private List<Comment> commentList = new ArrayList<>();
